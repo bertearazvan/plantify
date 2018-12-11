@@ -131,6 +131,11 @@ function checkUser(emailForm) {
         alert("You are logged in!");
         document.getElementById("modalLogin").style.display = "none";
         foundUserId = found.id;
+        document.getElementById("loginButton").style.display = "none";
+        document.getElementById("signUpButton").style.display = "none";
+        document.getElementById("plantATree").style.display = "inline";
+        document.getElementById("yourName").innerHTML = found.firstname;
+        document.getElementById("yourName").style.display = "inline";
         console.log(found.id);
       } else {
         alert("incorect username");

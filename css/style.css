@@ -52,10 +52,15 @@ a:visited {
   text-decoration: none;
 }
 
-#signUpButton {
+#signUpButton,
+#yourName {
   background-image: linear-gradient(to right, #f280a8, #c86dd7);
   border-radius: 22px;
   color: #f8faff;
+}
+
+#yourName {
+  padding: 7px 18px 7px 18px;
 }
 
 #signUpButton:hover {
