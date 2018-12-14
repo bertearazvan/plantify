@@ -24,6 +24,8 @@ function showLogin() {
 
 function showLoginForm() {
   document.getElementById("modalLogin").style.display = "block";
+  document.querySelector(".modal").classList.remove("zoomOutUp");
+  document.querySelector(".modal").classList.add("zoomIn");
   closeSignUpForm();
 }
 
@@ -33,7 +35,13 @@ function showSignUpForm() {
 }
 
 function closeLoginForm() {
-  document.getElementById("modalLogin").style.display = "none";
+  document.querySelector(".modal").classList.add("zoomOutUp");
+  document.querySelector(".modal").classList.remove("zoomIn");
+  document.querySelector(".overlay").classList.add("overlayAnimationOut");
+  setTimeout(function() {
+    document.querySelector(".overlay").style.display = "none";
+    document.querySelector(".overlay").classList.remove("overlayAnimationOut");
+  }, 1800);
 }
 
 function closeSignUpForm() {
@@ -128,10 +136,11 @@ function checkUser(emailForm) {
       });
       if (found != undefined) {
         console.log(found);
-        alert("You are logged in!");
-        document.getElementById("modalLogin").style.display = "none";
+        console.log("You are logged in!");
+        closeLoginForm();
         foundUserId = found.id;
         document.getElementById("loginButton").style.display = "none";
+        document.querySelector(".overlay").classList.add("overlayAnimationOut");
         document.getElementById("signUpButton").style.display = "none";
         document.getElementById("plantATree").style.display = "inline";
         document.getElementById("yourName").innerHTML = found.firstname;
