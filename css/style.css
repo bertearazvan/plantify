@@ -88,20 +88,6 @@ a:visited {
   height: 30px;
 }
 
-/* Add shadow to NavBar when scrolled */
-
-.shadow-anim {
-  animation: createShadow 0.4s linear forwards;
-}
-
-@keyframes createShadow {
-  to {
-    opacity: 0.9;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.39),
-      0 8px 22px 0 rgba(0, 0, 0, 0.13);
-  }
-}
-
 /*----General----*/
 
 .h1info {
@@ -382,6 +368,20 @@ footer > div > p {
   color: #b5b5b5;
 }
 
+/* Add shadow to NavBar when scrolled */
+
+.shadow-anim {
+  animation: createShadow 0.4s linear forwards;
+}
+
+@keyframes createShadow {
+  to {
+    opacity: 0.9;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.39),
+      0 8px 22px 0 rgba(0, 0, 0, 0.13);
+  }
+}
+
 /*----Animations ZOOM IN/OUT----*/
 
 .zoomIn {
@@ -398,25 +398,6 @@ footer > div > p {
     opacity: 1;
   }
 }
-
-/* .zoomOutUp {
-  animation: zoomOutUp 2s;
-}
-
-@keyframes zoomOutUp {
-  40% {
-    opacity: 1;
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
-    transform-origin: center bottom;
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
-} */
 
 .zoomOutUp {
   animation: zoomOutUp 2s;
@@ -500,7 +481,6 @@ label {
 
 .agreement input {
   display: inline;
-  width: 30px;
 }
 
 .agreement {
