@@ -109,6 +109,8 @@ form2.addEventListener("submit", e => {
 
 //------------------------add user to database |^----------------------
 
+let myStorage = window.localStorage;
+
 form1.addEventListener("submit", e => {
   //preventDefault() - means that when the user clicks submit, the page will not reload automatically
   e.preventDefault();
@@ -139,6 +141,7 @@ function checkUser(emailForm) {
         console.log("You are logged in!");
         closeLoginForm();
         foundUserId = found.id;
+        localStorage.setItem("foundUserId", found.id);
         document.getElementById("loginButton").style.display = "none";
         document.querySelector(".overlay").classList.add("overlayAnimationOut");
         document.getElementById("signUpButton").style.display = "none";

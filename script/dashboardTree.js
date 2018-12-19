@@ -1,7 +1,7 @@
-// let foundUserId = 4;
+var foundUser = localStorage.getItem("foundUserId");
 
-console.log(foundUserId);
-fetch("http://5c04b49cd5f2070013d58166.mockapi.io/users/" + foundUserId)
+console.log(foundUser);
+fetch("http://5c04b49cd5f2070013d58166.mockapi.io/users/" + foundUser)
   .then(res => res.json())
   .then(tree => {
     console.log(tree.tree[0].region);
