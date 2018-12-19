@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My plant</title>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-family: "Open Sans", sans-serif;
+      background-image: linear-gradient(to bottom right, #381969, #81e0dd);
+    }
+
+    .mainDiv {
+      display: grid;
+      grid-template-columns: 20% 80%;
+      padding: 80px;
+    }
+
+    .profile {
+      background-color: green;
+      height: 83vh;
+      border-radius: 10px 0px 0px 10px;
+
+      background-color: rgba(255, 255, 255, 0.4);
+      border: 1px thin gray;
+    }
+    .tree {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      background-color: red;
+      height: 83vh;
+      border-radius: 0px 10px 10px 0px;
+      background-color: rgba(255, 255, 255, 0.3);
+      overflow-y: scroll;
+    }
+
+    .tree .treeDiv {
+      height: 70%;
+      margin: 30px 15px 0px 50px;
+      padding-bottom: 30px;
+      background-color: black;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0px 0px 50px -6px #787878;
+    }
+
+    .statusDiv {
+      height: 70%;
+      margin: 30px 50px 0px 15px;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0px 0px 50px -6px #787878;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .dimensionTreeDiv {
+      width: 100%;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 20px;
+    }
+
+    .divMap {
+      height: 90%;
+      padding-top: 10px;
+      margin: 0px 15px 0px 50px;
+      text-align: center;
+      font-size: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0px 0px 50px -6px #787878;
+      border-radius: 15px;
+    }
+
+    .statuses{
+        height: 60%;
+      margin: 0px 50px 0px 15px;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0px 0px 50px -6px #787878;
+    }
+
+    .divStatuses{
+        width: 100%;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 975px){
+        .tree{
+            grid-template-columns: 100%;
+        }
+
+        .tree .treeDiv{
+            margin: 20px;
+        }
+
+        .statusDiv{
+            margin: 20px;
+        }
+
+        .divMap{
+            margin: 20px;
+        }
+
+        .statuses{
+            margin: 20px;
+            height: 80%;
+        }
+    }
+
+    @media only screen and (max-width: 650px){
+        .mainDiv{
+            grid-template-columns: 100%;
+            padding: 5px;
+        }
+        .profile{
+            height: 45vh;
+            border-radius: 10px 10px 0px 0px;
+        }
+    }
+
+  </style>
+
+  <body>
+    <div class="mainDiv">
+      <div class="profile">
+        <div style="width: 70px; border-radius: 100%; margin: 0 auto;">
+          <img
+            class="profile-image"
+            src="images/profile-pic.png"
+            style=" margin-top: 20px; border-radius: 100%;"
+          />
+        </div>
+        <p id="profileName" style="margin-top: 30px;text-align: center;">Stefan Cristian</p>
+        <p style="text-align: center;">Joined in: <span id="monthJoin">April</span></p>
+      </div>
+      <div class="tree">
+        <div class="treeDiv">
+          <div style="width: 100px; margin: 0 auto; margin-top: 20px;">
+            <img
+              src="images/ai-icon-pine.png"
+              style="width: 100%; height: auto; "
+            />
+          </div>
+          <p id="treeName" style="margin-top: 30px;text-align: center;">
+            Stefan Cristian Tree
+          </p>
+        </div>
+        <div class="statusDiv">
+          <div class="dimensionTreeDiv">
+            <p><span id="treeName2"></span>: 2 yo</p>
+            <p>Region: <span id="regionName"></span></p>
+            <p>Width: 23cm</p>
+            <p>Height: 50cm</p>
+          </div>
+        </div>
+        <div class="availableTrees">
+          <div class="divMap">
+            <p style="margin: 0px;">Available trees</p>
+            <img src="images/ai-forest.png" style="width: 70%; height: auto;" />
+          </div>
+        </div>
+        <div class="statuses">
+            <div class="divStatuses">
+                    <p><span id="treeName3">Timmy</span> has been watered on: 23.10.2018.</p>
+                    <p>Normal growth.</p>
+                    <p>Healthy tree.</p>
+                    <p>Due to the winter the growth will stagnate for about 3 months now.*</p>
+            </div>
+
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="script/dashboardTree.js"></script>
+  </body>
+</html>
