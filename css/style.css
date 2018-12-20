@@ -20,7 +20,7 @@ nav {
   height: 8vh;
   max-width: 100%;
   position: fixed;
-  top: 0.5em;
+  top: 0;
   background-color: #f8faff;
   z-index: 10;
 }
