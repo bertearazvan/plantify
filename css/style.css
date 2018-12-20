@@ -17,18 +17,13 @@ body {
 
 nav {
   width: 100vw;
-  height: 8vh;
+  height: calc(8vh + 1em);
   max-width: 100%;
   position: fixed;
   top: 0;
+  padding: 0.5em 0;
   background-color: #f8faff;
   z-index: 10;
-}
-
-@media screen and (max-width: 768px) {
-  nav {
-    top: 0;
-  }
 }
 
 nav > ul {
@@ -101,7 +96,7 @@ a:visited {
 .logo-menu {
   position: absolute;
   left: 10vw;
-  top: 20px;
+  top: calc(20px + 0.4em);
   height: 30px;
 }
 
