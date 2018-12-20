@@ -2,9 +2,11 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  scroll-behavior: smooth;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #f8faff;
   overflow-x: hidden;
