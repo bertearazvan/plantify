@@ -7,6 +7,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: #f8faff;
   overflow-x: hidden;
@@ -19,9 +20,15 @@ nav {
   height: 8vh;
   max-width: 100%;
   position: fixed;
-  top: 0;
+  top: 0.5em;
   background-color: #f8faff;
   z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    top: 0;
+  }
 }
 
 nav > ul {
@@ -61,6 +68,7 @@ a:visited {
   color: #f8faff;
   outline: none;
   transition: 0.5s;
+  padding: 8px 30px;
   background-size: 220% auto;
   box-shadow: 0 0 20px #eee;
   background-image: linear-gradient(
@@ -69,6 +77,13 @@ a:visited {
     #c86dd7 51%,
     #f280a8 100%
   );
+}
+
+@media screen and (max-width: 768px) {
+  #signUpButton,
+  #yourName {
+    padding: 5px 12px;
+  }
 }
 
 #signUpButton:hover,
@@ -107,14 +122,14 @@ a:visited {
   content: "";
   display: block;
   margin: 0 auto;
-  width: 120px;
+  width: 80px;
   padding-top: 15px;
   border-bottom: 3px solid #e78cbd;
 }
 
 #pages {
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
 }
 
 .div-content > div > h2 {
@@ -189,11 +204,14 @@ button:hover {
 
 #home > div > h1 {
   padding-left: 10vw;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   font-family: "Open Sans", sans-serif;
-  font-size: 60px;
+  font-size: 42pt;
   font-weight: 700;
   color: #634d7c;
-  line-height: 1.6;
+  line-height: 1.2;
+  text-transform: none;
 }
 
 .grid-container {
@@ -351,8 +369,16 @@ footer {
   color: #b5b5b5;
 }
 
-footer > div {
+footer > div:first-child {
   margin-top: 50px;
+}
+
+footer > div:last-child {
+  margin: 2em 0;
+}
+
+footer > div {
+  margin: 2em 0 0;
 }
 
 footer > div > img {
