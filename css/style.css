@@ -2,6 +2,9 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -14,11 +17,13 @@ body {
 
 nav {
   width: 100vw;
-  height: 8vh;
+  height: calc(8vh + 1em);
   max-width: 100%;
   position: fixed;
   top: 0;
+  padding: 0.5em 0;
   background-color: #f8faff;
+  z-index: 10;
 }
 
 nav > ul {
@@ -52,10 +57,37 @@ a:visited {
   text-decoration: none;
 }
 
-#signUpButton {
-  background-image: linear-gradient(to right, #f280a8, #c86dd7);
+#signUpButton,
+#yourName {
   border-radius: 22px;
   color: #f8faff;
+  outline: none;
+  transition: 0.5s;
+  padding: 8px 30px;
+  background-size: 220% auto;
+  box-shadow: 0 0 20px #eee;
+  background-image: linear-gradient(
+    to right,
+    #f280a8 0%,
+    #c86dd7 51%,
+    #f280a8 100%
+  );
+}
+
+@media screen and (max-width: 768px) {
+  #signUpButton,
+  #yourName {
+    padding: 5px 12px;
+  }
+}
+
+#signUpButton:hover,
+#yourName:hover {
+  background-position: right center;
+}
+
+#yourName {
+  padding: 7px 18px 7px 18px;
 }
 
 #signUpButton:hover {
@@ -64,22 +96,8 @@ a:visited {
 .logo-menu {
   position: absolute;
   left: 10vw;
-  top: 20px;
+  top: calc(20px + 0.4em);
   height: 30px;
-}
-
-/* Add shadow to NavBar when scrolled */
-
-.shadow-anim {
-  animation: createShadow 0.4s linear forwards;
-}
-
-@keyframes createShadow {
-  to {
-    opacity: 0.9;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.39),
-      0 8px 22px 0 rgba(0, 0, 0, 0.13);
-  }
 }
 
 /*----General----*/
@@ -99,17 +117,18 @@ a:visited {
   content: "";
   display: block;
   margin: 0 auto;
-  width: 120px;
+  width: 80px;
   padding-top: 15px;
   border-bottom: 3px solid #e78cbd;
 }
 
 #pages {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
 }
 
 .div-content > div > h2 {
+  padding-top: 6vh;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -122,12 +141,11 @@ a:visited {
   font-weight: 400;
   font-size: 14px;
   color: #634d7c;
-  text-align: justify;
+  text-align: center;
 }
 
 button {
   width: 150px;
-  background-image: linear-gradient(to right, #f280a8, #c86dd7);
   padding: 9px 25px 9px 25px;
   border-radius: 19px;
   color: #f8faff;
@@ -137,13 +155,21 @@ button {
   margin-top: 3vh;
   border: 0px;
   outline: none;
+  transition: 0.5s;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #f280a8 0%,
+    #c86dd7 51%,
+    #f280a8 100%
+  );
 }
 button:active {
   transform: translateY(2px);
 }
 
 button:hover {
-  background-image: linear-gradient(to right, #c86dd7, #f280a8);
+  background-position: right center;
 }
 
 .destination {
@@ -173,11 +199,14 @@ button:hover {
 
 #home > div > h1 {
   padding-left: 10vw;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   font-family: "Open Sans", sans-serif;
-  font-size: 66px;
+  font-size: 42pt;
   font-weight: 700;
   color: #634d7c;
-  line-height: 1.6;
+  line-height: 1.2;
+  text-transform: none;
 }
 
 .grid-container {
@@ -188,6 +217,11 @@ button:hover {
   width: 100%;
   height: 250px;
   object-fit: contain;
+  transition: transform 1s;
+}
+
+.grid-container > img:hover {
+  transform: scale(1.2);
 }
 
 /*----About page----*/
@@ -206,7 +240,8 @@ button:hover {
 }
 
 #about > div > img {
-  width: 10vw;
+  height: 15vw;
+  padding-bottom: 70px;
 }
 
 /*----Help out page----*/
@@ -225,7 +260,12 @@ button:hover {
 }
 
 #help-out > div > img {
-  width: 20vw;
+  width: 25vw;
+  transition: transform 1s;
+}
+
+#help-out > div > img:hover {
+  transform: scale(1.1);
 }
 
 .help-content {
@@ -283,6 +323,7 @@ button:hover {
 
 .contact-button {
   float: left;
+  margin-left: 0px;
 }
 
 ::placeholder {
@@ -323,8 +364,16 @@ footer {
   color: #b5b5b5;
 }
 
-footer > div {
+footer > div:first-child {
   margin-top: 50px;
+}
+
+footer > div:last-child {
+  margin: 2em 0 4em;
+}
+
+footer > div {
+  margin: 2em 0 0;
 }
 
 footer > div > img {
@@ -340,6 +389,52 @@ footer > div > a {
 footer > div > p {
   font-size: 12px;
   color: #b5b5b5;
+}
+
+/* Add shadow to NavBar when scrolled */
+
+.shadow-anim {
+  animation: createShadow 0.4s linear forwards;
+}
+
+@keyframes createShadow {
+  to {
+    opacity: 0.9;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.39),
+      0 8px 22px 0 rgba(0, 0, 0, 0.13);
+  }
+}
+
+/*----Animations ZOOM IN/OUT----*/
+
+.zoomIn {
+  animation: zoomIn 1s;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomOutUp {
+  animation: zoomOutUp 2s;
+}
+
+@keyframes zoomOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
 }
 
 /*---MODAL---*/
@@ -409,7 +504,6 @@ label {
 
 .agreement input {
   display: inline;
-  width: 30px;
 }
 
 .agreement {
@@ -473,7 +567,48 @@ label {
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: rgba(99, 77, 124, 0.85);
+  background-color: rgba(99, 77, 124, 0.35);
+  animation: overlay 0.5s;
+}
+
+.overlayAnimationOut {
+  animation: overlayOut 1s forwards;
+}
+
+@keyframes overlayOut {
+  from {
+    background-color: rgba(99, 77, 124, 0.35);
+  }
+
+  33% {
+    background-color: rgba(99, 77, 124, 0.25);
+  }
+
+  66% {
+    background-color: rgba(99, 77, 124, 0.13);
+  }
+
+  to {
+    background-color: rgba(99, 77, 124, 0);
+  }
+}
+
+@keyframes overlay {
+  from {
+    background-color: rgba(99, 77, 124, 0);
+  }
+
+  33% {
+    background-color: rgba(99, 77, 124, 0.13);
+  }
+
+  66% {
+    background-color: rgba(99, 77, 124, 0.25);
+  }
+
+  to {
+    background-color: rgba(99, 77, 124, 0.35);
+  }
 }
 
 #modalSignUp,
@@ -669,7 +804,7 @@ h3 {
     margin-right: 5%;
     margin-left: 5%;
     width: 90vw;
-    padding: 20px 5px 20px 5px;
+    padding: 20px 5px 70px 5px;
   }
 }
 
@@ -700,16 +835,23 @@ h3 {
     font-size: 12px;
   }
 
+  .div-content > div > h2 {
+    padding-top: 0px;
+  }
+
   #home {
     background-image: url("../css/logo.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 200px;
+    height: auto;
+    padding-bottom: 30px;
   }
 
   #home > div > h1 {
     padding-top: 100px;
     font-size: 50px;
+    line-height: 1.3;
   }
 
   #pages {
@@ -723,11 +865,12 @@ h3 {
 
   #about {
     grid-template-columns: 1fr;
-    grid-gap: 10px;
+    grid-gap: 50px;
   }
 
   #about > div > img {
-    width: 60%;
+    height: 30vh;
+    padding-bottom: 0px;
   }
 
   #help-out > div > img {
@@ -777,6 +920,10 @@ h3 {
     padding: 0px;
   }
 
+  .grid-name {
+    grid-column-gap: 10px;
+  }
+
   .contact-button {
     margin-left: 0px;
   }
@@ -786,5 +933,10 @@ h3 {
   }
   footer > div {
     margin-top: 20px;
+  }
+
+  .closeModal {
+    top: -40px;
+    right: -20px;
   }
 }
